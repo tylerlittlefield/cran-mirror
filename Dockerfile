@@ -4,6 +4,13 @@ MAINTAINER "Tyler Littlefield" tylerlittlefield@hey.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
+## Create a docker user
+RUN useradd docker \
+  && mkdir /home/docker \
+  && chown docker:docker /home/docker \
+  && addgroup docker staff \
+  && echo "docker:docker" | chpasswd
+
 RUN apt-get update -qq && apt-get -y dist-upgrade && apt-get -y install openssh-server apache2 supervisor cron rsync && apt-get autoremove -y && apt-get clean -y
 RUN mkdir -p /var/lock/apache2 /var/run/apache2 /var/run/sshd /var/log/supervisor
 
