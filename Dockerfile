@@ -21,7 +21,7 @@ RUN sed -ri 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 ADD crontab /etc/crontab
 RUN crontab /etc/crontab
 
-EXPOSE 22 80
+EXPOSE 80
 
 ## The main script
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
