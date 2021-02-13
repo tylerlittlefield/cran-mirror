@@ -1,6 +1,6 @@
 FROM ubuntu:20.10
 
-LABEL "Tyler Littlefield" tylerlittlefield@hey.com
+MAINTAINER "Tyler Littlefield" tylerlittlefield@hey.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
